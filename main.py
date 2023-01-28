@@ -102,6 +102,19 @@ else:
 #      etc.
 # Hint: The next number is found by adding the two numbers before it
 
+def term(n):
+    first=0
+    second=1
+    if n == 1:
+        print(first)
+    else:
+        for i in range(2,n):
+            sum = first + second
+            first = second
+            second = sum
+            print(sum)
+print(term(50))
+
 # exercise-06 What's the  Season?
 
 # Write the code that:
