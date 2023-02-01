@@ -120,7 +120,7 @@ print(term(50))
 # Write the code that:
 # 1. Prompts the user to enter the month (as three characters):
 #      Enter the month of the season (Jan - Dec):
-# 2. Then promptshtt the user to enter the day of the month:
+# 2. Then prompt the user to enter the day of the month:
 #      Enter the day of the month:
 # 3. Calculate what season it is based upon this chart:
 #      Dec 21 - Mar 19: Winter
@@ -135,3 +135,26 @@ print(term(50))
 # if input_month in ('Jan', 'Feb', 'Mar'):
 # After setting the likely season, you can use another if...elif...else statement to "adjust" if
 # the day number falls within a certain range.
+
+month = input("Enter a month abbreviated as three characters (Jan-Dec): ").lower()
+day = input("Enter the day of the month according to the month given, (1-31): ")
+
+if month in ("Jan", "Feb", "Mar"):
+    season = "winter"
+elif month in ("Apr", "May", "Jun"):
+    season = "spring"
+elif month in ("Jul", "Aug", "Sep"):
+    season = "summer"
+else:
+    season = "fall"
+
+if (month == "Mar") and (day > 19):
+    season = "spring"
+elif (month == "Jun") and (day > 20):
+    season = "summer"
+elif (month == "Sep") and (day > 21):
+    season = "fall"
+else: 
+    season = "winter"
+
+print(f"The date - {month} {day}th, is in the {season} season")
